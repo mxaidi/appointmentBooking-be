@@ -36,4 +36,31 @@ module.exports = (app, libs) => {
             res.status(400).json({ err: err.message });
         }
       });
+
+      app.post("/updateSeller", async (req, res) => {
+        try {
+            const seller = await libs.auth.updateSeller(req.body);
+            res.json({ data : seller.abc });
+        } catch (err) {
+            res.status(400).json({ err: err.message });
+        }
+      });
+
+      app.post("/updateUserAccept", async (req, res) => {
+        try {
+            const seller = await libs.auth.acceptSlot(req.body);
+            res.json({ data : seller.abc });
+        } catch (err) {
+            res.status(400).json({ err: err.message });
+        }
+      });
+
+      app.post("/updateUserReject", async (req, res) => {
+        try {
+            const seller = await libs.auth.rejectSlot(req.body);
+            res.json({ data : seller.abc });
+        } catch (err) {
+            res.status(400).json({ err: err.message });
+        }
+      });
 }

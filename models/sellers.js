@@ -6,6 +6,11 @@ let sellersSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   email: { type: String },
+  availableSlots: [
+    {
+      slots: { type: String }
+    },
+  ],
 });
 
 module.exports = mongoose.model("Sellers", sellersSchema);

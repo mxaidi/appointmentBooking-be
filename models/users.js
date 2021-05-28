@@ -6,6 +6,8 @@ let usersSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   email: { type: String },
+  status: {type: String},
+  appointmentRequest: { type: String },
 });
 
 module.exports = mongoose.model("Users", usersSchema);
